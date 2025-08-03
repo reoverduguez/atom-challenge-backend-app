@@ -1,2 +1,3 @@
-# atom-challenge-backend-app
+# Atom Challenge Backend
+
 Express app
