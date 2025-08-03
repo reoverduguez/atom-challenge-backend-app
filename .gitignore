@@ -1,0 +1,7 @@
+dist
+.vscode
+node_modules
+package-lock.json
+.env
+.env.*
+src/config/serviceAccountKey.json
