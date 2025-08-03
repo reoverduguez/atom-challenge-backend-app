@@ -1,11 +1,15 @@
+jest.mock('../../src/services/task.service');
+jest.mock('../../src/middleware/firebaseAuth.ts', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  authorizeFirebaseToken: (_req: any, _res: any, next: any) => next(),
+}));
+
 import express from 'express';
 import request from 'supertest';
 
 import { Task } from '../../src/models/task.model';
 import taskRoutes from '../../src/routes/task.route';
 import * as service from '../../src/services/task.service';
-
-jest.mock('../../src/services/task.service');
 
 const app = express();
 app.use(express.json());
@@ -104,7 +108,7 @@ describe('Task Controller', () => {
     });
 
     it('should return 400 if payload is missing id', async () => {
-      const { ...payload } = mockTask;
+      const { id, ...payload } = mockTask;
       const res = await request(app).put('/task/invalid-id!').send(payload);
       expect(res.status).toBe(400);
       expect(res.body.error).toBe('Valid task id is required');

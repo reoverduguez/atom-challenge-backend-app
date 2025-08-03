@@ -1,3 +1,6 @@
+// import { Timestamp } from 'firebase/firestore'; // for client SDK
+import { Timestamp } from 'firebase-admin/firestore'; // for admin SDK
+
 import { db } from '../firebase';
 import { Task } from '../models/task.model';
 
@@ -11,7 +14,7 @@ export const getUserTasks = async (owner: string): Promise<Task[]> => {
       description: data.description,
       owner: data.owner,
       completed: data.completed,
-      createdAt: data.createdAt,
+      createdAt: (data.createdAt as Timestamp)?.toDate(),
     } as Task;
   });
 };
@@ -28,7 +31,7 @@ export const getTask = async (id: string): Promise<Task | null> => {
     description: data?.description,
     owner: data?.owner,
     completed: data?.completed,
-    createdAt: data?.createdAt,
+    createdAt: (data?.createdAt as Timestamp)?.toDate(),
   } as Task;
 };
 
@@ -53,7 +56,7 @@ export const updateTask = async (id: string, task: Partial<Task>): Promise<Task 
     description: data?.description,
     owner: data?.owner,
     completed: data?.completed,
-    createdAt: data?.createdAt,
+    createdAt: (data?.createdAt as Timestamp)?.toDate(),
   } as Task;
 };
 

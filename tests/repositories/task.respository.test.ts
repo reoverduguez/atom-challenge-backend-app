@@ -9,7 +9,7 @@ jest.mock('../../src/firebase.ts', () => {
           description: 'mock-description',
           owner: 'mock-owner',
           completed: false,
-          createdAt: new Date('2025-08-03T19:43:10.691Z'),
+          createdAt: Timestamp.fromDate(new Date('2025-08-01')),
         }),
       },
       {
@@ -19,7 +19,7 @@ jest.mock('../../src/firebase.ts', () => {
           description: 'mock-description',
           owner: 'mock-owner',
           completed: false,
-          createdAt: new Date('2025-08-03T19:43:10.691Z'),
+          createdAt: Timestamp.fromDate(new Date('2025-08-01')),
         }),
       },
     ],
@@ -33,7 +33,7 @@ jest.mock('../../src/firebase.ts', () => {
         description: 'mock-description',
         owner: 'mock-owner',
         completed: false,
-        createdAt: new Date('2025-08-03T19:43:10.691Z'),
+        createdAt: Timestamp.fromDate(new Date('2025-08-01')),
       }),
     }),
   };
@@ -49,6 +49,8 @@ jest.mock('../../src/firebase.ts', () => {
     },
   };
 });
+
+import { Timestamp } from 'firebase-admin/firestore';
 
 import { Task } from '../../src/models/task.model';
 import * as taskRepo from '../../src/repositories/task.repository';
@@ -136,7 +138,7 @@ describe('Task Repository', () => {
         description: 'mock-description',
         owner: 'mock-owner',
         completed: false,
-        createdAt: expect.any(Date),
+        createdAt: Timestamp.fromDate(new Date('2025-08-01')),
       }),
     });
 
