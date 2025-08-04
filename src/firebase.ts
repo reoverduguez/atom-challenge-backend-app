@@ -1,10 +1,14 @@
+import * as dotenv from 'dotenv';
 import * as admin from 'firebase-admin';
 
-import serviceAccount from './config/serviceAccountKey.json';
+dotenv.config();
+
+const serviceAccount = JSON.parse(
+  Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON!, 'base64').toString('utf8'),
+);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
-  projectId: serviceAccount.project_id,
 });
 
 export const db = admin.firestore();
