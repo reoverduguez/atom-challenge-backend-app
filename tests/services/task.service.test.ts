@@ -16,7 +16,7 @@ describe('Task Service', () => {
     description: 'mock-description',
     owner: 'mock-user',
     completed: false,
-    createdAt: new admin.firestore.Timestamp(123456, 0),
+    createdAt: new admin.firestore.Timestamp(123456, 0).toDate(),
   };
 
   afterEach(() => {

@@ -6,9 +6,8 @@
     "rootDir": "./",
     "strict": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "isolatedModules": true
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
-  "include": ["src", "tests"]
+  "include": ["src", "tests", "eslint.config.ts"]
 }

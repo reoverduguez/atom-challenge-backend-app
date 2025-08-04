@@ -7,7 +7,7 @@
     "test:watch": "jest --watch",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
-    "prod": "npm run build && NODE_ENV=production node dist/index.js",
+    "build:prod": "cross-env NODE_ENV=production tsc",
     "lint": "eslint ./{src,test}/**/*.ts",
     "lint:fix": "eslint ./{src,test}/**/*.ts --fix",
     "prettier": "prettier --write ."
@@ -32,6 +32,7 @@
     "@types/supertest": "^6.0.3",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
+    "cross-env": "^10.0.0",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
