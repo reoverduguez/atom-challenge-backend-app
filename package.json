@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "start": "nodemon src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "start": "node src/index.ts",
     "build": "tsc",
     "build:prod": "cross-env NODE_ENV=production tsc",
     "lint": "eslint ./{src,test}/**/*.ts",
