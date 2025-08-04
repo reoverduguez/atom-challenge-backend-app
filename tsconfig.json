@@ -9,5 +9,6 @@
     "moduleResolution": "node",
     "esModuleInterop": true
   },
-  "include": ["src", "tests", "eslint.config.ts"]
+  "include": ["src"],
+  "exclude": ["**/*.test.ts", "tests", "node_modules"]
 }
