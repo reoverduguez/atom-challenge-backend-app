@@ -11,7 +11,7 @@ It integrates with Firebase Admin SDK for authentication and uses a clean, modul
 - Full support for unit testing using Jest and supertest
 
 ## Local Development
-1. nstall dependencies
+1. install dependencies
 ```bash
 npm i
 ```
@@ -29,7 +29,7 @@ npm run dev
 ```
 
 ## Heroku Deployment
-This app currently lives in https://atom-reoverduguez-express-app-3d84121e68b6.herokuapp.com. Any changes to the code are deployed using.
+This app currently lives in https://atom-reoverduguez-express-app-3d84121e68b6.herokuapp.com. Any changes to the code are deployed using
 
 ```bash
 git push heroku main
@@ -44,8 +44,7 @@ heroku logs --tail --app [app-name]
 ```
 
 ## Testing
-Run unit tests with
-
+Tests were written using jest and supertest. Run tests with
 ```bash
 npm run test
 ```
