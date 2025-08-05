@@ -1,5 +1,4 @@
-// import { Timestamp } from 'firebase/firestore'; // for client SDK
-import { Timestamp } from 'firebase-admin/firestore'; // for admin SDK
+import { Timestamp } from 'firebase-admin/firestore';
 
 import { db } from '../firebase';
 import { Task } from '../models/task.model';
